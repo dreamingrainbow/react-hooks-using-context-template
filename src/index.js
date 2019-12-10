@@ -1,3 +1,10 @@
+/**
+ * Copyright M.A.D. Computer Consulting LLC 2019
+ * Example Create-React-App -- ReactJs Hooks using Context
+ * @fileOverview index.js Load ReactJS, and The Application Context Provider.
+ * @author Michael A. Dennis <michaeladennis@yahoo.com>
+ * @version 0.0.1
+ */
 import React from "react";
 import ReactDOM from "react-dom";
 import AppProvider from "./AppProvider";

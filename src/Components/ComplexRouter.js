@@ -16,6 +16,11 @@ export default withRouter(function ComplexRouter(props) {
           </Link>
         ) : null}
         <button onClick={props.history.goBack.bind(this)}>Go Back</button>
+        <Switch basename="/complex-router">
+          <Route to="/a" exact component={() => <p>Nest As Deep As You Want</p>} />
+          <Route to="/b" component={() => <p>Keep It Simple, and Organized.</p>} />
+          <Route to="/c" component={() => <p>Reusable Components make building simple!</p>} />
+        </Switch>
       </header>
     </div>
   );
