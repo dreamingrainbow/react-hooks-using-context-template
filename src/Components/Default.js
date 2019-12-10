@@ -59,7 +59,6 @@ export default withRouter(function Default(props) {
               </Link>
             </React.Fragment>
           ) : null}
-          {console.log(context, site)}
         </section>
       </header>
     </div>
