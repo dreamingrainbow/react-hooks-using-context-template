@@ -1,10 +1,13 @@
 # _Example Create-React-App_ #
+
 ## _-- ReactJs Hooks using Context --_ ##
+
 ***
 This application is an example of how you can use ReactJs Hooks Context implementation with advanced routing and composed components.
 
 Fork the repository or learn to build it on your own by following the tutoral below.
 ***
+
 ## _Learn to build with ReactJs Hooks_ ##
 
 To begin let's install the latest version of NodeJs, and Create-React-App. If you need help with that, follow one of these guides to help you in getting started.
@@ -453,7 +456,7 @@ This Composed Component, like many of the components in this example use a metho
 
 ```js
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, Link, Switch, Route } from "react-router-dom";
 import {AppContext} from "../AppContext";
 export default withRouter(function ComplexRouter(props) {
   const context = React.useContext(AppContext);
@@ -470,15 +473,38 @@ export default withRouter(function ComplexRouter(props) {
           </Link>
         ) : null}
         <button onClick={props.history.goBack.bind(this)}>Go Back</button>
-        <Switch basename="/complex-router">
-          <Route to="/a" exact component={() => <p>Nest As Deep As You Want</p>} />
-          <Route to="/b" component={() => <p>Keep It Simple, and Organized.</p>} />
-          <Route to="/c" component={() => <p>Reusable Components make building simple!</p>} />
+        <Switch>
+          <Route
+            path="/complex-router/a"
+            exact
+            component={A}
+          />
+          <Route
+            path="/complex-router/b"
+            component={() => <p>Keep It Simple, and Organized.</p>}
+          />
+          <Route
+            path="/complex-router/c"
+            component={() => <p>Reusable Components make building simple!</p>}
+          />
         </Switch>
+        <Link to="/complex-router/a">
+          <button type="button">A</button>
+        </Link>
+        <Link to="/complex-router/b">
+          <button type="button">B</button>
+        </Link>
+        <Link to="/complex-router/c">
+          <button type="button">C</button>
+        </Link>
       </header>
     </div>
   );
 });
+
+export function A() {
+  return <p>Nest As Deep As You Want</p>;
+}
 ```
 
 This Complex Routing Component is just another example of how simple you can make even the most complex applications.
@@ -522,7 +548,6 @@ export default withRouter(function NotFound(props) {
 ```
 
 This Component is use to tell the client they have come across a page that cannot be located, or the resouces they are not found.
-
 
 ##### **Components/PermissionDenied.js** #####
 

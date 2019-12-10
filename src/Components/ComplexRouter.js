@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter, Link, Switch, Route } from "react-router-dom";
-import {AppContext} from "../AppContext";
+import { AppContext } from "../AppContext";
 export default withRouter(function ComplexRouter(props) {
   const context = React.useContext(AppContext);
   return (
@@ -17,11 +17,7 @@ export default withRouter(function ComplexRouter(props) {
         ) : null}
         <button onClick={props.history.goBack.bind(this)}>Go Back</button>
         <Switch>
-          <Route
-            path="/complex-router/a"
-            exact
-            component={A}
-          />
+          <Route path="/complex-router/a" exact component={A} />
           <Route
             path="/complex-router/b"
             component={() => <p>Keep It Simple, and Organized.</p>}
@@ -45,6 +41,6 @@ export default withRouter(function ComplexRouter(props) {
   );
 });
 
-function A() {
+export function A() {
   return <p>Nest As Deep As You Want</p>;
 }
