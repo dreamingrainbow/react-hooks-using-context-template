@@ -51,7 +51,7 @@ Let's get started and open up the `index.js` file. We are going to setup the boo
 
 #### **index.js** ####
 
-```js
+```ReactJS
 import React from "react";
 import ReactDOM from "react-dom";
 import AppProvider from "./AppProvider";
